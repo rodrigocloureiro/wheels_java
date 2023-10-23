@@ -2,7 +2,7 @@ public class Cliente {
     // Configurando os atributos da classe
     private String nome;
     private String cep;
-    private int telefone ;
+    private int telefone;
     private int idCliente;
 
     private static int contadorClientes = 1;
@@ -13,8 +13,8 @@ public class Cliente {
         this.telefone = telefone;
     }
 
-    public int getNumeroCliente() {
-        return idCliente;
+    public int getTelefone() {
+        return telefone;
     }
 
     public String getNome() {

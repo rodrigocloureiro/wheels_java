@@ -1,11 +1,11 @@
 public class Bike {
 
     // Criando a lista de bicicletas
-    protected static Bike[] listaBicicletas = new Bike[5];
+    private static Bike[] listaBicicletas = new Bike[5];
     // Configurando os atributos da classe
-    protected int deposito = 0;
-    protected int taxa = 0;
-    protected int numeroBicicleta = 0;
+    private int deposito = 0;
+    private int taxa = 0;
+    private int numeroBicicleta = 0;
 
     /*
         Este bloco é executado quando a classe é carregada e configura nossa loja de bicicletas.
@@ -14,7 +14,7 @@ public class Bike {
     static {
         int j = 0;
         for (int i = 10; i < 15; i++) {
-            Bike b = new Bike(i, i, (j * 100));
+            Bike b = new Bike(i, i, (j + 100));
             listaBicicletas[j] = b;
             j++;
         }
@@ -26,6 +26,8 @@ public class Bike {
         this.taxa = taxa;
         this.numeroBicicleta = numeroBicicleta;
     }
+
+    public static Bike[] getListaBicicletas() { return listaBicicletas; }
 
     public int getDeposito() {
         return deposito;
@@ -47,14 +49,12 @@ public class Bike {
             // Se encontrarmos a bike com o número correto...
             if (listaBicicletas[i].getNumeroBicicleta() == numeroBicicleta) {
                 // diga ao usuário que encontramos
-                System.out.println("Bicicleta de número '" + numeroBicicleta + "' encontrada\n");
+                System.out.println("\nBicicleta de número '" + numeroBicicleta + "' encontrada\n");
                 // e retorne-a para a IU
                 return listaBicicletas[i];
             }
         }
 
-        // Se não encontrarmos a bicicleta, avisamos o usuário e não devolvemos nada
-        System.out.println("Bicicleta de número '" + numeroBicicleta + "' não encontrada\n");
         return null;
     }
 
@@ -65,9 +65,13 @@ public class Bike {
         System.out.println("TAXA: " + taxa + "\n");
     }
 
-    public void calcularCusto(int numeroDeDias) {
+    public int calcularCusto(int numeroDeDias) {
         // Calculando o custo
-        int custo = deposito + (taxa * numeroDeDias);
-        System.out.println("O custo seria £" + custo + "\n");
+        return deposito + (taxa * numeroDeDias);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Número: %d : Taxa: %d - Depósito: %d", numeroBicicleta, taxa, deposito);
     }
 }

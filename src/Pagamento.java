@@ -20,11 +20,12 @@ public class Pagamento {
         // Exibe todos os detalhes relevantes
         String cliente = aluguel.getCliente().getNome();
         String cep = aluguel.getCliente().getCep();
-        System.out.println("Imprimindo recibo para '" + cliente + "'.....");
-        System.out.println("No CEP: " + cep + "\n");
+        int telefone = aluguel.getCliente().getTelefone();
 
-        System.out.println("Alugando bicicleta de número '" + aluguel.getBike().getNumeroBicicleta() + "' por " + aluguel.getNumeroDeDias() + " dias\n");
-
-        aluguel.getBike().calcularCusto(aluguel.getNumeroDeDias());
+        System.out.println("\nImprimindo recibo.....\n");
+        System.out.printf("Cliente: %s\nCEP: %s\nContato: %d\n", cliente, cep, telefone);
+        System.out.println("Bicicleta alugada: Nº" + aluguel.getBike().getNumeroBicicleta());
+        System.out.println("Dias alugados: " + aluguel.getNumeroDeDias());
+        System.out.println("Valor total: £" + aluguel.getBike().calcularCusto(aluguel.getNumeroDeDias()));
     }
 }

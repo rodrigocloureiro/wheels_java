@@ -9,20 +9,23 @@ public class EmitirBicicletaUI {
     private Aluguel aluguel;
     private int numeroDeDias;
 
-    public void exibirDetalhesBicicleta(int bikeNum) {
+    public void exibirDetalhesBicicleta(int numeroBicicleta) throws Exception {
         // Encontra a bicicleta pelo número
-        bikeEscolhida = Bike.procurarBikePeloNumero(bikeNum);
+        bikeEscolhida = Bike.procurarBikePeloNumero(numeroBicicleta);
         if (bikeEscolhida != null) {
             // Exibe os detalhes da bicicleta encontrada
             bikeEscolhida.exibirDetalhes();
+        } else {
+            // Se não encontrarmos a bicicleta, avisamos o usuário e não devolvemos nada
+            throw new Exception("\nBicicleta de número '" + numeroBicicleta + "' não encontrada");
         }
     }
 
-    public void calcularCusto(int numDays) {
+    public int calcularCusto(int numDays) {
         // Atribui o número de dias recebido via parâmetro ao atributo numeroDeDias
         numeroDeDias = numDays;
         // Calcula o custo da bicicleta de acordo com o número de dias
-        bikeEscolhida.calcularCusto(numDays);
+        return bikeEscolhida.calcularCusto(numDays);
     }
 
     public void criarCliente(String nome, String cep, int telefone) {
