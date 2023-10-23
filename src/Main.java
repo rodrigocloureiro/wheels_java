@@ -2,23 +2,23 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-            This little program will run through the methods on IssueBikeUI
+            This little program will run through the methods on EmitirBicicletaUI
             calling each in turn, like a user with a front end would do.
         */
 
-        // First, create the UI
-        IssueBikeUI ui = new IssueBikeUI();
+        // Primeiro, UI criada
+        EmitirBicicletaUI ui = new EmitirBicicletaUI();
 
-        // 1. Show details for chosen bike
-        ui.showBikeDetails(100);
+        // 1. Exibindo detalhes da bicicleta escolhida
+        ui.exibirDetalhesBicicleta(100);
 
-        // 2. Calculate cost of hiring this bike for 5 days
-        ui.calculateCost(5);
+        // 2. Calculando o custo de alugar esta bicicleta por 5 dias
+        ui.calcularCusto(5);
 
-        // 3. Create new customer, payment and hire
-        ui.createCustomer("Les Hargreaves", "PW2 6TR", 1462501339);
+        // 3. Criando novo cliente
+        ui.criarCliente("Les Hargreaves", "PW2 6TR", 1462501339);
 
-        // 4. Calculate the total cost
-        ui.calculateTotalPayment();
+        // 4. Calculando o custo total
+        ui.calcularPagamentoTotal();
     }
 }

@@ -1,73 +1,73 @@
 public class Bike {
 
-    // create the BikeList
-    protected static Bike[] bikeList = new Bike[5];
-    // set up member variables
-    protected int deposit = 0;
-    protected int rate = 0;
-    protected int bikeNumber = 0;
+    // Criando a lista de bicicletas
+    protected static Bike[] listaBicicletas = new Bike[5];
+    // Configurando os atributos da classe
+    protected int deposito = 0;
+    protected int taxa = 0;
+    protected int numeroBicicleta = 0;
 
     /*
-        This block is run when the class is loaded and sets up our bike store.
-        It arbitrarily populates the attributes: deposit, rate and bikeNumber.
+        Este bloco é executado quando a classe é carregada e configura nossa loja de bicicletas.
+        Ele preenche arbitrariamente os atributos: depósito, taxa e número da bicicleta.
     */
     static {
         int j = 0;
         for (int i = 10; i < 15; i++) {
             Bike b = new Bike(i, i, (j * 100));
-            bikeList[j] = b;
+            listaBicicletas[j] = b;
             j++;
         }
     }
 
-    public Bike(int dep, int rat, int num) {
-        // set the member variables
-        deposit = dep;
-        rate = rat;
-        bikeNumber = num;
+    public Bike(int deposito, int taxa, int numeroBicicleta) {
+        // Atribuindo valores aos atributos
+        this.deposito = deposito;
+        this.taxa = taxa;
+        this.numeroBicicleta = numeroBicicleta;
     }
 
-    public int getDeposit() {
-        return deposit;
+    public int getDeposito() {
+        return deposito;
     }
 
-    public int getRate() {
-        return rate;
+    public int getTaxa() {
+        return taxa;
     }
 
-    public int getBikeNumber() {
-        return bikeNumber;
+    public int getNumeroBicicleta() {
+        return numeroBicicleta;
     }
 
-    public static Bike findBikeByNumber(int bikeNum) {
-        int numberofBikes = bikeList.length;
+    public static Bike procurarBikePeloNumero(int numeroBicicleta) {
+        int numeroDeBicicletas = listaBicicletas.length;
 
-        // iterate over the list of bikes
-        for (int i = 0; i < numberofBikes; i++) {
-            // if we find the bice with the correct number...
-            if (bikeList[i].getBikeNumber() == bikeNum) {
-                // tell user that we've found it
-                System.out.println("Bike with number '" + bikeNum + "' found\n");
-                // and return it to the UI
-                return bikeList[i];
+        // Iterando sobre a lista de bicicletas
+        for (int i = 0; i < numeroDeBicicletas; i++) {
+            // Se encontrarmos a bike com o número correto...
+            if (listaBicicletas[i].getNumeroBicicleta() == numeroBicicleta) {
+                // diga ao usuário que encontramos
+                System.out.println("Bicicleta de número '" + numeroBicicleta + "' encontrada\n");
+                // e retorne-a para a IU
+                return listaBicicletas[i];
             }
         }
 
-        // if we don't find the bike, tell the user and return nothing
-        System.out.println("Bike with number '" + bikeNum + "' not found\n");
+        // Se não encontrarmos a bicicleta, avisamos o usuário e não devolvemos nada
+        System.out.println("Bicicleta de número '" + numeroBicicleta + "' não encontrada\n");
         return null;
     }
 
-    public void showDetails() {
-        // print out all the details
-        System.out.println("Details for bike number '" + bikeNumber + "'");
-        System.out.println("DEPOSIT: " + deposit);
-        System.out.println("RATE: " + rate + "\n");
+    public void exibirDetalhes() {
+        // Exibindo todos os detalhes
+        System.out.println("Detalhes da bicicleta de número '" + numeroBicicleta + "':");
+        System.out.println("DEPÓSITO: " + deposito);
+        System.out.println("TAXA: " + taxa + "\n");
     }
 
-    public void calculateCost(int numberOfDays) {
-        // work out the cost
-        int cost = deposit + (rate * numberOfDays);
-        System.out.println("COST would be £" + cost + "\n");
+    public void calcularCusto(int numeroDeDias) {
+        // Calculando o custo
+        int custo = deposito + (taxa * numeroDeDias);
+        System.out.println("O custo seria £" + custo + "\n");
     }
 }
