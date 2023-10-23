@@ -2,8 +2,8 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-            This little program will run through the methods on EmitirBicicletaUI
-            calling each in turn, like a user with a front end would do.
+            Este pequeno programa irá rodar através dos métodos de EmitirBicicletaUI
+            chamando cada um por vez, como faria um usuário com um front-end.
         */
 
         // Primeiro, UI criada
@@ -16,7 +16,7 @@ public class Main {
         ui.calcularCusto(5);
 
         // 3. Criando novo cliente
-        ui.criarCliente("Les Hargreaves", "PW2 6TR", 1462501339);
+        ui.criarCliente("Marcos", "22250-010", 99125003);
 
         // 4. Calculando o custo total
         ui.calcularPagamentoTotal();
