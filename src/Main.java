@@ -10,50 +10,64 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Opções de bicicletas para alugar\n");
-
-        for (int i = 0; i < Bike.getListaBicicletas().length; i++) {
-            System.out.println(Bike.getListaBicicletas()[i]);
-        }
-
-        System.out.print("\nEscolha uma bicicleta pelo número: ");
-        int bicicletaEscolhida = sc.nextInt();
-
-        System.out.print("A bicicleta será alugada por quantos dias? ");
-        int qtdDias = sc.nextInt();
-
         // Primeiro, UI criada
         EmitirBicicletaUI ui = new EmitirBicicletaUI();
 
-        try {
-            // 1. Exibindo detalhes da bicicleta escolhida
-            ui.exibirDetalhesBicicleta(bicicletaEscolhida);
+        while (true) {
 
-            // 2. Calculando o custo de alugar esta bicicleta por 5 dias
-            System.out.println("O custo seria £" + ui.calcularCusto(qtdDias));
+            System.out.println("Opções de bicicletas para alugar\n");
 
-            System.out.print("\nDeseja prosseguir com o aluguel? 1 - Sim | 2 - Não = ");
-            int opcao = sc.nextInt();
-            sc.nextLine();
-
-            if (opcao == 1) {
-                System.out.print("\nQual seu nome? ");
-                String nome = sc.nextLine();
-
-                System.out.print("Qual seu CEP? ");
-                String cep = sc.nextLine();
-
-                System.out.print("Qual seu telefone? ");
-                int telefone = sc.nextInt();
-
-                // 3. Criando novo cliente
-                ui.criarCliente(nome, cep, telefone);
-
-                // 4. Calculando o custo total
-                ui.calcularPagamentoTotal();
+            for (int i = 0; i < Bike.getListaBicicletas().length; i++) {
+                System.out.println(Bike.getListaBicicletas()[i]);
             }
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+
+            System.out.print("\nEscolha uma bicicleta pelo número: ");
+            int bicicletaEscolhida = sc.nextInt();
+
+            try {
+                // Verifica a disponibilodade da bicicleta
+                ui.verificarDisponibilidade(bicicletaEscolhida);
+
+                System.out.print("A bicicleta será alugada por quantos dias? ");
+                int qtdDias = sc.nextInt();
+
+                try {
+                    // 1. Exibindo detalhes da bicicleta escolhida
+                    ui.exibirDetalhesBicicleta(bicicletaEscolhida);
+
+                    // 2. Calculando o custo de alugar esta bicicleta por 5 dias
+                    System.out.println("O custo seria £" + ui.calcularCusto(qtdDias));
+
+                    System.out.print("\nDeseja prosseguir com o aluguel? 1 - Sim | 2 - Não = ");
+                    int opcao = sc.nextInt();
+                    sc.nextLine();
+
+                    if (opcao == 1) {
+                        System.out.print("\nQual seu nome? ");
+                        String nome = sc.nextLine();
+
+                        System.out.print("Qual seu CEP? ");
+                        String cep = sc.nextLine();
+
+                        System.out.print("Qual seu telefone? ");
+                        int telefone = sc.nextInt();
+
+                        // 3. Criando novo cliente
+                        ui.criarCliente(nome, cep, telefone);
+
+                        // 4. Calculando o custo total e alugando bicicleta
+                        ui.calcularPagamentoTotal();
+                        ui.alugar();
+                    }
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+
+            } catch (Exception ex) {
+                System.out.println(ex.getMessage());
+            }
+
+            System.out.println("\n\n\n");
         }
     }
 }

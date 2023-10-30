@@ -1,33 +1,44 @@
+import java.util.Random;
+
 public class Bike {
 
     // Criando a lista de bicicletas
     private static Bike[] listaBicicletas = new Bike[5];
     // Configurando os atributos da classe
-    private int deposito = 0;
-    private int taxa = 0;
-    private int numeroBicicleta = 0;
+    private int deposito;
+    private int taxa;
+    private int numeroBicicleta;
+    private int quantidade;
+    private String modelo;
 
     /*
         Este bloco é executado quando a classe é carregada e configura nossa loja de bicicletas.
         Ele preenche arbitrariamente os atributos: depósito, taxa e número da bicicleta.
     */
     static {
+        String[] modelosBicicletas = {"Houston Foxer Hammer", "Caloi Urban E-vibe Urbam", "Track & Bikes Serena", "Caloi Lazer Andes", "BMX Colli Bikes Cross Extreme", "Caloi Strada Racing"};
         int j = 0;
-        for (int i = 10; i < 15; i++) {
-            Bike b = new Bike(i, i, (j + 100));
+        Random random = new Random();
+
+        for (int i = 0; i < 5; i++) {
+            Bike b = new Bike(random.nextInt(20), random.nextInt(20), (j + 100), random.nextInt(3) + 1, modelosBicicletas[i]);
             listaBicicletas[j] = b;
             j++;
         }
     }
 
-    public Bike(int deposito, int taxa, int numeroBicicleta) {
+    public Bike(int deposito, int taxa, int numeroBicicleta, int quantidade, String modelo) {
         // Atribuindo valores aos atributos
         this.deposito = deposito;
         this.taxa = taxa;
         this.numeroBicicleta = numeroBicicleta;
+        this.quantidade = quantidade;
+        this.modelo = modelo;
     }
 
-    public static Bike[] getListaBicicletas() { return listaBicicletas; }
+    public static Bike[] getListaBicicletas() {
+        return listaBicicletas;
+    }
 
     public int getDeposito() {
         return deposito;
@@ -39,6 +50,14 @@ public class Bike {
 
     public int getNumeroBicicleta() {
         return numeroBicicleta;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
     }
 
     public static Bike procurarBikePeloNumero(int numeroBicicleta) {
@@ -58,9 +77,19 @@ public class Bike {
         return null;
     }
 
+    public boolean alugarBicicleta(Bike bike) {
+        if (bike.quantidade > 0) {
+            bike.quantidade -= 1;
+            return true;
+        }
+
+        return false;
+    }
+
     public void exibirDetalhes() {
         // Exibindo todos os detalhes
         System.out.println("Detalhes da bicicleta de número '" + numeroBicicleta + "':");
+        System.out.println("MODELO: " + modelo);
         System.out.println("DEPÓSITO: " + deposito);
         System.out.println("TAXA: " + taxa + "\n");
     }
@@ -72,6 +101,6 @@ public class Bike {
 
     @Override
     public String toString() {
-        return String.format("Número: %d : Taxa: %d - Depósito: %d", numeroBicicleta, taxa, deposito);
+        return String.format("Número: %d - Taxa: %d - Depósito: %d - Quantidade: %d - Modelo: %s", numeroBicicleta, taxa, deposito, quantidade, modelo);
     }
 }

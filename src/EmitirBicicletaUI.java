@@ -10,15 +10,26 @@ public class EmitirBicicletaUI {
     private int numeroDeDias;
 
     public void exibirDetalhesBicicleta(int numeroBicicleta) throws Exception {
+        // Exibe os detalhes da bicicleta encontrada
+        procurarBike(numeroBicicleta).exibirDetalhes();
+    }
+
+    public void verificarDisponibilidade(int numeroBicicleta) throws Exception {
+        procurarBike(numeroBicicleta);
+    }
+
+    private Bike procurarBike(int numeroBicicleta) throws Exception {
         // Encontra a bicicleta pelo número
         bikeEscolhida = Bike.procurarBikePeloNumero(numeroBicicleta);
-        if (bikeEscolhida != null) {
-            // Exibe os detalhes da bicicleta encontrada
-            bikeEscolhida.exibirDetalhes();
-        } else {
+        if (bikeEscolhida != null) return bikeEscolhida;
+        else {
             // Se não encontrarmos a bicicleta, avisamos o usuário e não devolvemos nada
             throw new Exception("\nBicicleta de número '" + numeroBicicleta + "' não encontrada");
         }
+    }
+
+    public void alugar() {
+        bikeEscolhida.alugarBicicleta(bikeEscolhida);
     }
 
     public int calcularCusto(int numDays) {

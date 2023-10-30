@@ -24,7 +24,7 @@ public class Pagamento {
 
         System.out.println("\nImprimindo recibo.....\n");
         System.out.printf("Cliente: %s\nCEP: %s\nContato: %d\n", cliente, cep, telefone);
-        System.out.println("Bicicleta alugada: Nº" + aluguel.getBike().getNumeroBicicleta());
+        System.out.println("Bicicleta alugada: Nº" + aluguel.getBike().getNumeroBicicleta() + " - " + aluguel.getBike().getModelo());
         System.out.println("Dias alugados: " + aluguel.getNumeroDeDias());
         System.out.println("Valor total: £" + aluguel.getBike().calcularCusto(aluguel.getNumeroDeDias()));
     }
