@@ -30,6 +30,8 @@ public class EmitirBicicletaUI {
 
     public void alugar() {
         bikeEscolhida.alugarBicicleta(bikeEscolhida);
+        Relatorio relatorio = new Relatorio(cliente, bikeEscolhida, aluguel);
+        relatorio.gerarRelatorio();
     }
 
     public int calcularCusto(int numDays) {
