@@ -15,7 +15,8 @@ public class EmitirBicicletaUI {
     }
 
     public void verificarDisponibilidade(int numeroBicicleta) throws Exception {
-        procurarBike(numeroBicicleta);
+        int quantidade = procurarBike(numeroBicicleta).getQuantidade();
+        if (quantidade == 0) throw new Exception("Bicicleta indisponível (fora de estoque)");
     }
 
     private Bike procurarBike(int numeroBicicleta) throws Exception {
