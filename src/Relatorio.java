@@ -35,7 +35,7 @@ public class Relatorio {
     }
 
     private Path criarArquivo() throws IOException {
-        Path file = dir.resolve(Paths.get("relatorio.csv"));
+        Path file = dir.resolve(Paths.get("relatorio.txt"));
         if (!Files.exists(file)) Files.createFile(file);
         return file;
     }
