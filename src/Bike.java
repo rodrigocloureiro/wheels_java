@@ -21,7 +21,7 @@ public class Bike {
         Random random = new Random();
 
         for (int i = 0; i < 5; i++) {
-            Bike b = new Bike(random.nextInt(20), random.nextInt(20), (j + 100), random.nextInt(3) + 1, modelosBicicletas[i]);
+            Bike b = new Bike(random.nextInt(20) + 10, random.nextInt(20) + 10, (j + 100), random.nextInt(3) + 1, modelosBicicletas[i]);
             listaBicicletas[j] = b;
             j++;
         }

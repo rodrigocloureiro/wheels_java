@@ -19,9 +19,11 @@ public class Relatorio {
     }
 
     private String gerarLinha() {
-        return String.format("%s - %s alugou a bicicleta '%s' por %d dias no total de £%d\n",
+        return String.format("%s - %s (CEP: %s, Tel.: %s) alugou a bicicleta '%s' por %d dias no total de £%d\n",
                 aluguel.getDataInicio().toString(),
                 cliente.getNome(),
+                cliente.getCep(),
+                cliente.getTelefone(),
                 aluguel.getBike().getModelo(),
                 aluguel.getNumeroDeDias(),
                 bike.calcularCusto(aluguel.getNumeroDeDias()));
