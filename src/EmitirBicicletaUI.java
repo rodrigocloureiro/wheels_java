@@ -1,4 +1,11 @@
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class EmitirBicicletaUI {
 
@@ -29,10 +36,38 @@ public class EmitirBicicletaUI {
         }
     }
 
-    public void alugar() {
+    public void alugar() throws IOException {
         bikeEscolhida.alugarBicicleta(bikeEscolhida);
         Relatorio relatorio = new Relatorio(cliente, bikeEscolhida, aluguel);
         relatorio.gerarRelatorio();
+        atualizarEstoque();
+    }
+
+    public void atualizarEstoque() throws IOException {
+        Path file = Paths.get("estoque/estoque.csv");
+        List<String> novasLinhas = new ArrayList<>();
+
+        for (var bike : Bike.getListaBicicletas()) {
+            String novaLinha = gerarLinha(bike.getDeposito(),
+                    bike.getTaxa(),
+                    bike.getNumeroBicicleta(),
+                    bike.getQuantidade(),
+                    bike.getModelo()
+            );
+
+            novasLinhas.add(novaLinha);
+        }
+
+        Files.write(file, novasLinhas, StandardOpenOption.TRUNCATE_EXISTING);
+    }
+
+    private String gerarLinha(int deposito, int taxa, int numeroBicicleta, int quantidade, String modelo) {
+        return String.format("%d;%d;%d;%d;%s",
+                deposito,
+                taxa,
+                numeroBicicleta,
+                quantidade,
+                modelo);
     }
 
     public int calcularCusto(int numDays) {
