@@ -5,6 +5,8 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.Arrays;
+import java.util.List;
 
 public class Relatorio {
     private Cliente cliente;
@@ -31,6 +33,14 @@ public class Relatorio {
                 bike.calcularCusto(aluguel.getNumeroDeDias()));
     }
 
+    private void atualizarNumeroPedidos() throws IOException {
+        Path file = Paths.get("relatorio/relatorio.txt");
+        int numeroDePedidos = Integer.parseInt(Files.readAllLines(file).get(0).split(":")[1].trim());
+        Files.write(file,
+                String.format("Pedidos: %d\n", numeroDePedidos + 1).getBytes(),
+                StandardOpenOption.WRITE);
+    }
+
     // Cria o diretório do relatório
     private void criarDiretorio() throws IOException {
         dir = Paths.get("relatorio");
@@ -46,6 +56,7 @@ public class Relatorio {
 
     // Escreve no relatório
     private void escreverLinha(Path file) throws IOException {
+        atualizarNumeroPedidos();
         Files.write(file, gerarLinha().getBytes(), StandardOpenOption.APPEND);
     }
 
