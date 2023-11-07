@@ -1,11 +1,16 @@
 package org.example;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.List;
 import java.util.Random;
 
 public class Bike {
 
     // Criando a lista de bicicletas
-    private static Bike[] listaBicicletas = new Bike[5];
+    private static Bike[] listaBicicletas = new Bike[6];
     // Configurando os atributos da classe
     private int deposito;
     private int taxa;
@@ -15,17 +20,25 @@ public class Bike {
 
     /*
         Este bloco é executado quando a classe é carregada e configura nossa loja de bicicletas.
-        Ele preenche arbitrariamente os atributos: depósito, taxa e número da bicicleta.
+        Ele preenche os atributos depósito, taxa e número da bicicleta a partir do arquivo estoque.csv.
     */
     static {
-        String[] modelosBicicletas = {"Houston Foxer Hammer", "Caloi Urban E-vibe Urbam", "Track & Bikes Serena", "Caloi Lazer Andes", "BMX Colli Bikes Cross Extreme", "Caloi Strada Racing"};
-        int j = 0;
-        Random random = new Random();
+        Path programDir = Paths.get(System.getProperty("user.dir"), "/estoque");
+        Path file = programDir.resolve(Paths.get("estoque.csv"));
+        try {
+            List<String> linhas = Files.readAllLines(file);
 
-        for (int i = 0; i < 5; i++) {
-            Bike b = new Bike(random.nextInt(20) + 10, random.nextInt(20) + 10, (j + 100), random.nextInt(3) + 1, modelosBicicletas[i]);
-            listaBicicletas[j] = b;
-            j++;
+            for (int i = 0; i < linhas.size(); i++) {
+                String[] parte = linhas.get(i).split(";");
+                Bike b = new Bike(Integer.parseInt(parte[0]),
+                        Integer.parseInt(parte[1]),
+                        Integer.parseInt(parte[2]),
+                        Integer.parseInt(parte[3]),
+                        parte[4]);
+                listaBicicletas[i] = b;
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
