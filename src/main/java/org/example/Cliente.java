@@ -1,9 +1,14 @@
 package org.example;
 
+import lombok.Getter;
+
 public class Cliente {
     // Configurando os atributos da classe
+    @Getter
     private String nome;
+    @Getter
     private String cep;
+    @Getter
     private int telefone;
     private int idCliente;
 
@@ -13,17 +18,5 @@ public class Cliente {
         this.nome = nome;
         this.cep = cep;
         this.telefone = telefone;
-    }
-
-    public int getTelefone() {
-        return telefone;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-
-    public String getCep() {
-        return cep;
     }
 }

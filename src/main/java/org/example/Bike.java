@@ -1,5 +1,7 @@
 package org.example;
 
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,12 +12,18 @@ import java.util.Random;
 public class Bike {
 
     // Criando a lista de bicicletas
+    @Getter
     private static Bike[] listaBicicletas = new Bike[6];
     // Configurando os atributos da classe
+    @Getter
     private int deposito;
+    @Getter
     private int taxa;
+    @Getter
     private int numeroBicicleta;
+    @Getter
     private int quantidade;
+    @Getter
     private String modelo;
 
     /*
@@ -49,30 +57,6 @@ public class Bike {
         this.numeroBicicleta = numeroBicicleta;
         this.quantidade = quantidade;
         this.modelo = modelo;
-    }
-
-    public static Bike[] getListaBicicletas() {
-        return listaBicicletas;
-    }
-
-    public int getDeposito() {
-        return deposito;
-    }
-
-    public int getTaxa() {
-        return taxa;
-    }
-
-    public int getNumeroBicicleta() {
-        return numeroBicicleta;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
     }
 
     public static Bike procurarBikePeloNumero(int numeroBicicleta) {

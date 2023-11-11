@@ -1,5 +1,7 @@
 package org.example;
 
+import lombok.Getter;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -9,10 +11,15 @@ import java.util.Date;
 import java.util.Locale;
 
 public class Aluguel {
+    @Getter
     private Date dataInicio;
+    @Getter
     private Cliente cliente;
+    @Getter
     private Bike bike;
+    @Getter
     private int numeroDeDias;
+    @Getter
     private int idAluguel;
 
     private static int hireCount = 0;
@@ -31,28 +38,8 @@ public class Aluguel {
         }
     }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public Bike getBike() {
-        return bike;
-    }
-
-    public int getNumeroDeDias() {
-        return numeroDeDias;
-    }
-
-    public Date getDataInicio() {
-        return dataInicio;
-    }
-
     public String getDataFormatada() {
         SimpleDateFormat formatador = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss EEEE", Locale.getDefault());
         return formatador.format(this.dataInicio).toUpperCase();
-    }
-
-    public int getIdAluguel() {
-        return idAluguel;
     }
 }
