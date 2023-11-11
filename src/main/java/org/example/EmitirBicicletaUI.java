@@ -1,6 +1,7 @@
 package org.example;
 
 import com.itextpdf.text.DocumentException;
+import org.example.exceptions.EstoqueException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -28,7 +29,7 @@ public class EmitirBicicletaUI {
 
     public void verificarDisponibilidade(int numeroBicicleta) throws Exception {
         int quantidade = procurarBike(numeroBicicleta).getQuantidade();
-        if (quantidade == 0) throw new Exception("Bicicleta indisponível (fora de estoque)");
+        if (quantidade == 0) throw new EstoqueException("Bicicleta indisponível (fora de estoque)");
     }
 
     private Bike procurarBike(int numeroBicicleta) throws Exception {
