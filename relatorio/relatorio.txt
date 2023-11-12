@@ -1,15 +1,1 @@
-Pedidos: 14
-6/11/2023 12:11:42 SEGUNDA-FEIRA - Rodrigo (CEP: 12873465, Tel.: 18273645) alugou a bicicleta 'Houston Foxer Hammer' por 5 dias no total de £89
-06/11/2023 12:34:38 SEGUNDA-FEIRA - Olivier (CEP: 21874356, Tel.: 1232345456) alugou a bicicleta 'Track & Bikes Serena' por 3 dias no total de £76
-06/11/2023 12:35:20 SEGUNDA-FEIRA - Cuesta (CEP: 634667, Tel.: 2364362) alugou a bicicleta 'Caloi Urban E-vibe Urbam' por 2 dias no total de £48
-06/11/2023 12:37:13 SEGUNDA-FEIRA - Olivier (CEP: 25365876, Tel.: 76816356) alugou a bicicleta 'Houston Foxer Hammer' por 3 dias no total de £71
-06/11/2023 12:37:49 SEGUNDA-FEIRA - Cuesta (CEP: 22590080, Tel.: 99557789) alugou a bicicleta 'Caloi Urban E-vibe Urbam' por 5 dias no total de £155
-06/11/2023 12:38:40 SEGUNDA-FEIRA - Dimitri Payet (CEP: 214567, Tel.: 936285725) alugou a bicicleta 'BMX Colli Bikes Cross Extreme' por 4 dias no total de £57
-06/11/2023 13:50:34 SEGUNDA-FEIRA - Guest (CEP: 5276, Tel.: 2367582) alugou a bicicleta 'Houston Foxer Hammer' por 1 dias no total de £40
-06/11/2023 14:09:44 SEGUNDA-FEIRA - Rodrigo Guest (CEP: 426357, Tel.: 215746) alugou a bicicleta 'Houston Foxer Hammer' por 5 dias no total de £83
-06/11/2023 15:17:04 SEGUNDA-FEIRA - Antônia (CEP: 31851, Tel.: 647132) alugou a bicicleta 'BMX Colli Bikes Cross Extreme' por 3 dias no total de £62
-06/11/2023 22:48:14 SEGUNDA-FEIRA - Ying (CEP: 235786, Tel.: 7389556) alugou a bicicleta '"Caloi Strada Racing"' por 4 dias no total de £70
-11/11/2023 18:46:57 SÁBADO - William (CEP: 5692352, Tel.: 23975821) alugou a bicicleta '"Caloi Strada Racing"' por 4 dias no total de £70
-11/11/2023 19:41:01 SÁBADO - Miguel (CEP: 2983677, Tel.: 29485426) alugou a bicicleta '"BMX Colli Bikes Cross Extreme"' por 8 dias no total de £123
-11/11/2023 19:46:40 SÁBADO - Milton (CEP: 19836, Tel.: 297581351) alugou a bicicleta '"Houston Foxer Hammer"' por 7 dias no total de £129
-11/11/2023 20:21:15 SÁBADO - Guest (CEP: 1, Tel.: 1) alugou a bicicleta '"BMX Colli Bikes Cross Extreme"' por 1 dias no total de £32
+Pedidos: 0
