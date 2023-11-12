@@ -1,4 +1,4 @@
-Pedidos: 13
+Pedidos: 14
 6/11/2023 12:11:42 SEGUNDA-FEIRA - Rodrigo (CEP: 12873465, Tel.: 18273645) alugou a bicicleta 'Houston Foxer Hammer' por 5 dias no total de £89
 06/11/2023 12:34:38 SEGUNDA-FEIRA - Olivier (CEP: 21874356, Tel.: 1232345456) alugou a bicicleta 'Track & Bikes Serena' por 3 dias no total de £76
 06/11/2023 12:35:20 SEGUNDA-FEIRA - Cuesta (CEP: 634667, Tel.: 2364362) alugou a bicicleta 'Caloi Urban E-vibe Urbam' por 2 dias no total de £48
@@ -12,3 +12,4 @@ Pedidos: 13
 11/11/2023 18:46:57 SÁBADO - William (CEP: 5692352, Tel.: 23975821) alugou a bicicleta '"Caloi Strada Racing"' por 4 dias no total de £70
 11/11/2023 19:41:01 SÁBADO - Miguel (CEP: 2983677, Tel.: 29485426) alugou a bicicleta '"BMX Colli Bikes Cross Extreme"' por 8 dias no total de £123
 11/11/2023 19:46:40 SÁBADO - Milton (CEP: 19836, Tel.: 297581351) alugou a bicicleta '"Houston Foxer Hammer"' por 7 dias no total de £129
+11/11/2023 20:21:15 SÁBADO - Guest (CEP: 1, Tel.: 1) alugou a bicicleta '"BMX Colli Bikes Cross Extreme"' por 1 dias no total de £32
