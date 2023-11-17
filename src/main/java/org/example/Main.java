@@ -38,20 +38,21 @@ public class Main {
                     ui.exibirDetalhesBicicleta(bicicletaEscolhida);
 
                     // 2. Calculando o custo de alugar esta bicicleta por 5 dias
-                    System.out.println("O custo seria £" + ui.calcularCusto(qtdDias));
+                    System.out.println("Custo: R$" + ui.calcularCusto(qtdDias));
 
-                    System.out.print("\nDeseja prosseguir com o aluguel? 1 - Sim | 2 - Não = ");
+                    System.out.print("\nProsseguir com o aluguel? 1 - Sim | 2 - Não = ");
                     int opcao = sc.nextInt();
                     sc.nextLine();
 
                     if (opcao == 1) {
-                        System.out.print("\nQual seu nome? ");
+                        System.out.println("===== PREENCHA COM OS DADOS DO CLIENTE =====");
+                        System.out.print("\nNome: ");
                         String nome = sc.nextLine();
 
-                        System.out.print("Qual seu CEP? ");
+                        System.out.print("CEP: ");
                         String cep = sc.nextLine();
 
-                        System.out.print("Qual seu telefone? ");
+                        System.out.print("Telefone: ");
                         int telefone = sc.nextInt();
 
                         // 3. Criando novo cliente
