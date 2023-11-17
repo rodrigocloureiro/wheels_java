@@ -23,7 +23,7 @@ public class Relatorio {
 
     // Informações que serão escritas no relatório
     private String gerarLinha() {
-        return String.format("%s - %s (CEP: %s, Tel.: %s) alugou a bicicleta '%s' por %d dias no total de £%d\n",
+        return String.format("%s - %s (CEP: %s, Tel.: %s) alugou a bicicleta '%s' por %d dias no total de R$ %d\n",
                 aluguel.getDataFormatada(),
                 cliente.getNome(),
                 cliente.getCep(),

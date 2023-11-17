@@ -38,7 +38,7 @@ public class Main {
                     ui.exibirDetalhesBicicleta(bicicletaEscolhida);
 
                     // 2. Calculando o custo de alugar esta bicicleta por 5 dias
-                    System.out.println("Custo: R$" + ui.calcularCusto(qtdDias));
+                    System.out.println("Custo: R$ " + ui.calcularCusto(qtdDias));
 
                     System.out.print("\nProsseguir com o aluguel? 1 - Sim | 2 - Não = ");
                     int opcao = sc.nextInt();

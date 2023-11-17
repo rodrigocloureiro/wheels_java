@@ -28,6 +28,6 @@ public class Pagamento {
         System.out.printf("Cliente: %s\nCEP: %s\nContato: %d\n", cliente, cep, telefone);
         System.out.println("Bicicleta alugada: Nº" + aluguel.getBike().getNumeroBicicleta() + " - " + aluguel.getBike().getModelo());
         System.out.println("Dias alugados: " + aluguel.getNumeroDeDias());
-        System.out.println("Valor total: £" + aluguel.getBike().calcularCusto(aluguel.getNumeroDeDias()));
+        System.out.println("Valor total: R$ " + aluguel.getBike().calcularCusto(aluguel.getNumeroDeDias()));
     }
 }

@@ -89,8 +89,8 @@ public class Bike {
         // Exibindo todos os detalhes
         System.out.println("Detalhes da bicicleta de número '" + numeroBicicleta + "':");
         System.out.println("MODELO: " + modelo);
-        System.out.println("DEPÓSITO: " + deposito);
-        System.out.println("TAXA: " + taxa + "\n");
+        System.out.println("DEPÓSITO: R$ " + deposito);
+        System.out.println("TAXA: R$ " + taxa + "\n");
     }
 
     public int calcularCusto(int numeroDeDias) {
@@ -100,6 +100,6 @@ public class Bike {
 
     @Override
     public String toString() {
-        return String.format("Número: %d - Taxa: %d - Depósito: %d - Quantidade: %d - Modelo: %s", numeroBicicleta, taxa, deposito, quantidade, modelo);
+        return String.format("Número: %d - Taxa: R$ %d - Depósito: R$ %d - Quantidade: %d - Modelo: %s", numeroBicicleta, taxa, deposito, quantidade, modelo);
     }
 }
