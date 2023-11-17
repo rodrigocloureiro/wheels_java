@@ -67,7 +67,7 @@ public class Bike {
             // Se encontrarmos a bike com o número correto...
             if (listaBicicletas[i].getNumeroBicicleta() == numeroBicicleta) {
                 // diga ao usuário que encontramos
-                System.out.println("\nBicicleta de número '" + numeroBicicleta + "' encontrada\n");
+                System.out.println("\nBicicleta de número '" + numeroBicicleta + "' encontrada - " + listaBicicletas[i].getModelo() + "\n");
                 // e retorne-a para a IU
                 return listaBicicletas[i];
             }
